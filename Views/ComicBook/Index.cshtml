@@ -1,8 +1,62 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<ComicBook>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Comic Books</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Issue No</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Published On</th>
+            <th>Authors</th>
+            <th>Publishers</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var comic in Model)
+            {
+                <tr>
+                    <td>@comic.IssueNo</td>
+                    <td><img src="@Url.Content($"~/img/{comic.ConvertImageUrlToLower(comic.ImageUrl)}.jpg")" alt="@comic.SeriesTitle" style="max-width:100px; max-height:100px;" /></td>
+                    <td>@comic.SeriesTitle</td>
+                    <td>@comic.TruncateDescription(comic.Description)</td>
+                    <td>@comic.PublishedOn.ToShortDateString()</td>
+                    <td>
+                        @if (comic.ComicBookAuthors != null)
+                        {
+                            @foreach (var author in comic.ComicBookAuthors)
+                            {
+                                <div>@author.Author.FirstName @author.Author.LastName</div>
+                            }
+                        }
+                        else
+                        {
+                            <p>There are no authors for this comic book.</p>
+                        }
+                    </td>
+                    <td>
+                        @if (comic.ComicBookPublishers != null)
+                        {
+                            @foreach (var publisher in comic.ComicBookPublishers)
+                            {
+                                <div>@publisher.Publisher.Name</div>
+                            }
+                        }
+                        else
+                        {
+                            <p>There are no publishers for this comic book.</p>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <p>There are no comic books available.</p>
+        }
+    </tbody>
+</table>

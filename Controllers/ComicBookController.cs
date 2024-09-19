@@ -1,5 +1,6 @@
 ﻿using ComicBookGallery.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ComicBookGallery.Controllers
@@ -17,12 +18,12 @@ namespace ComicBookGallery.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
 
-        public IActionResult Privacy()
-        {
-            return View();
+            var comicBooks = _context.ComicBook
+                .Include(cb => cb.ComicBookAuthors).ThenInclude(ca => ca.Author)
+                .Include(cb => cb.ComicBookPublishers).ThenInclude(cp => cp.Publisher)
+                .ToList();
+            return View(comicBooks);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

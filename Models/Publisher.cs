@@ -7,5 +7,6 @@ namespace ComicBookGallery.Models
         [Key]
         public int PublisherId { get; set; }
         public string Name { get; set; }
+        public ICollection<ComicBookPublishers> ComicBookPublishers { get; set; }
     }
 }
