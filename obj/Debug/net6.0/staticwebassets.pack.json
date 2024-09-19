@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\img\\blackpanther1.jpg",
+      "PackagePath": "staticwebassets\\img\\blackpanther1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\img\\ironman1.jpg",
+      "PackagePath": "staticwebassets\\img\\ironman1.jpg"
+    },
+    {
       "Id": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\img\\theamazingspiderman1.jpg",
       "PackagePath": "staticwebassets\\img\\theamazingspiderman1.jpg"
     },

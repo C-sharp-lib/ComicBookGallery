@@ -25,6 +25,19 @@ namespace ComicBookGallery.Controllers
                 .ToList();
             return View(comicBooks);
         }
+        [HttpGet("ComicBookDetails/{id}")]
+        public IActionResult ComicBookDetails(int id)
+        {
+            var comicBook = _context.ComicBook
+                .Include(cb => cb.ComicBookAuthors).ThenInclude(ca => ca.Author)
+                .Include(cp => cp.ComicBookPublishers).ThenInclude(cp => cp.Publisher)
+                .FirstOrDefault(cb => cb.ComicBookId == id);
+            if (comicBook == null)
+            {
+                return NotFound();
+            }
+            return View(comicBook);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

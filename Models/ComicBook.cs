@@ -42,14 +42,6 @@ namespace ComicBookGallery.Models
             }
             return string.Join(" ", words.Take(wordLimit)) + "...";
         }
-        public string FormatAuthors(List<Author> authors)
-        {
-            if (authors == null || authors.Count == 0)
-            {
-                return string.Empty;
-            }
-            var formattedNames = authors.Select(author => $"{author.FirstName} {author.LastName}");
-            return string.Join(", ", formattedNames) + ", ";
-        }
+        
     }
 }

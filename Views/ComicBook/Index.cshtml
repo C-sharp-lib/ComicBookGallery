@@ -2,10 +2,10 @@
 
 <h2>Comic Books</h2>
 
-<table class="table">
-    <thead>
+<table class="table table-hovered table-striped text-center">
+    <thead class="bg-primary text-white">
         <tr>
-            <th>Issue No</th>
+            <th>Comic Book Id</th>
             <th>Image</th>
             <th>Title</th>
             <th>Description</th>
@@ -20,9 +20,21 @@
             @foreach (var comic in Model)
             {
                 <tr>
-                    <td>@comic.IssueNo</td>
-                    <td><img src="@Url.Content($"~/img/{comic.ConvertImageUrlToLower(comic.ImageUrl)}.jpg")" alt="@comic.SeriesTitle" style="max-width:100px; max-height:100px;" /></td>
-                    <td>@comic.SeriesTitle</td>
+                    <td>
+                        <a asp-action="ComicBookDetails" asp-controller="ComicBook" asp-route-id="@comic.ComicBookId" class="no-highlight">
+                            @comic.ComicBookId
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="ComicBookDetails" asp-controller="ComicBook" asp-route-id="@comic.ComicBookId" class="no-highlight">
+                            <img src="@Url.Content($"~/img/{comic.ConvertImageUrlToLower(comic.ImageUrl)}.jpg")" alt="@comic.SeriesTitle" style="max-width:100px; max-height:100px;" />
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="ComicBookDetails" asp-controller="ComicBook" asp-route-id="@comic.ComicBookId" class="no-highlight">
+                            @comic.SeriesTitle
+                        </a>
+                    </td>
                     <td>@comic.TruncateDescription(comic.Description)</td>
                     <td>@comic.PublishedOn.ToShortDateString()</td>
                     <td>
@@ -30,7 +42,7 @@
                         {
                             @foreach (var author in comic.ComicBookAuthors)
                             {
-                                <div>@author.Author.FirstName @author.Author.LastName</div>
+                                <div>@author.FormatAuthors(author.Author.FirstName, author.Author.LastName)</div>
                             }
                         }
                         else
@@ -43,7 +55,7 @@
                         {
                             @foreach (var publisher in comic.ComicBookPublishers)
                             {
-                                <div>@publisher.Publisher.Name</div>
+                                <div>@publisher.FormatPublishers(publisher.Publisher.Name)</div>
                             }
                         }
                         else

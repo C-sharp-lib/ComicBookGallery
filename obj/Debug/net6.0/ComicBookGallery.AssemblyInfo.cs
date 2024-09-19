@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ComicBookGallery")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51a3d717f90732bbc183610cb1edafc2607ce25d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e05f4e32a2d4c52a9a37d977e690dbe87794c05")]
 [assembly: System.Reflection.AssemblyProductAttribute("ComicBookGallery")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ComicBookGallery")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

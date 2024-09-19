@@ -7,5 +7,9 @@
 
         public int PublisherId { get; set; }
         public Publisher Publisher { get; set; }
+        public string FormatPublishers(string name)
+        {
+            return $"{name},\n";
+        }
     }
 }

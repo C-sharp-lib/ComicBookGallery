@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\strad\OneDrive\Desktop\school\contemporary\treehouse\ComicBookGallery\ComicBookGallery
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/strad/OneDrive/Desktop/school/contemporary/treehouse/ComicBookGallery/ComicBookGallery/Views/ComicBook/ComicBookDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNCb29rXENvbWljQm9va0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/strad/OneDrive/Desktop/school/contemporary/treehouse/ComicBookGallery/ComicBookGallery/Views/ComicBook/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNCb29rXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -16,3 +16,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.no-highlight {
+    text-decoration: none;
+    color: dodgerblue !important;
+}
