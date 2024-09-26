@@ -8,14 +8,21 @@ using System.Web;
 
 namespace ComicBookGallery.Models
 {
-    public class ComicBook
+    public class ComicBook : IHelperFunctions
     {
         [Key]
         public int ComicBookId { get; set; }
+        [Required]
         public int IssueNo { get; set; }
+        [Required]
+        [StringLength(100)]
         public string SeriesTitle { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
         public string ImageUrl { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public DateTime PublishedOn { get; set; }
         public ICollection<ComicBookAuthors> ComicBookAuthors { get; set; }
         public ICollection<ComicBookPublishers> ComicBookPublishers { get; set; }
@@ -42,6 +49,6 @@ namespace ComicBookGallery.Models
             }
             return string.Join(" ", words.Take(wordLimit)) + "...";
         }
-        
+
     }
 }

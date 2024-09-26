@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "99HknscTQXw+9keg88uKro/QYZIUUddZBhCpZcrWouc=",
+  "Hash": "G/UXDvxrAkH9Sh4yOsZMQQXKQ1NFuDknATZzaAlD7uE=",
   "Source": "ComicBookGallery",
   "BasePath": "_content/ComicBookGallery",
   "Mode": "Default",
@@ -112,6 +112,25 @@
       "OriginalItemSpec": "wwwroot\\img\\blackpanther1.jpg"
     },
     {
+      "Identity": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\img\\blackpanther2.jpg",
+      "SourceId": "ComicBookGallery",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\",
+      "BasePath": "_content/ComicBookGallery",
+      "RelativePath": "img/blackpanther2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\blackpanther2.jpg"
+    },
+    {
       "Identity": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\img\\ironman1.jpg",
       "SourceId": "ComicBookGallery",
       "SourceType": "Discovered",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\ironman1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\img\\ProfileImages\\profile1.jpg",
+      "SourceId": "ComicBookGallery",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\",
+      "BasePath": "_content/ComicBookGallery",
+      "RelativePath": "img/ProfileImages/profile1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\ProfileImages\\profile1.jpg"
     },
     {
       "Identity": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\img\\theamazingspiderman1.jpg",
@@ -167,6 +205,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\js\\VueApp.js",
+      "SourceId": "ComicBookGallery",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\",
+      "BasePath": "_content/ComicBookGallery",
+      "RelativePath": "js/VueApp.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\VueApp.js"
     },
     {
       "Identity": "C:\\Users\\strad\\OneDrive\\Desktop\\school\\contemporary\\treehouse\\ComicBookGallery\\ComicBookGallery\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

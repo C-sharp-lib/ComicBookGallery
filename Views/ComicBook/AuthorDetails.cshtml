@@ -1,0 +1,33 @@
+﻿@model ComicBookGallery.Models.Author
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="row">
+    <div class="col-12 col-md-8">
+        <div id="app">
+            <card data-image="@Url.Content($"~/img/ProfileImages/{Model.ImageUrl}.jpg")">
+                <h3 slot="header">@Model.FirstName @Model.LastName</h3>
+            </card>
+        </div>
+
+    </div>
+    <div class="col-12 col-md-4">
+
+        <h3 class="text-center mt-3"><strong>Comic(s) For @Model.FirstName @Model.LastName</strong></h3>
+        <ul class="list-group list-group-flush">
+            @if (Model.ComicBookAuthors != null)
+            {
+                @foreach (var comicBook in Model.ComicBookAuthors)
+                {
+                    <li class="list-group-item text-center">
+                        <a asp-action="ComicBookDetails" asp-controller="ComicBook" asp-route-id="@comicBook.ComicBook.ComicBookId" class="no-style">
+                            @comicBook.ComicBook.SeriesTitle
+                        </a>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>

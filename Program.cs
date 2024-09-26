@@ -1,4 +1,5 @@
 using ComicBookGallery.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 internal class Program
 {
@@ -7,6 +8,14 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddDbContext<ComicBookGalleryContext>(options =>
                     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+        builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<ComicBookGalleryContext>()
+            .AddDefaultTokenProviders();
+        builder.Services.ConfigureApplicationCookie(options =>
+        {
+            options.LoginPath = "/Account/Login";
+            options.LogoutPath = "/Account/Logout";
+        });
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();

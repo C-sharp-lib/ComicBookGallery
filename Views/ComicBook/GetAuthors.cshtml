@@ -1,0 +1,44 @@
+﻿@model List<ComicBookGallery.Models.Author>
+@{
+    Layout = "_Layout";
+    
+}
+
+<div class="row">
+    <div class="col-12 col-md-10 offset-md-1">
+        <div class="card-shadow-lg">
+            <div class="card-content">
+                <table class="table table-hover text-center">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th>AuthorId</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Comic(s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            @foreach (var author in Model)
+                            {
+                                <tr>
+                                    <td>@author.AuthorId</td>
+                                    <td><img src="@Url.Content($"~/img/ProfileImages/{author.ConvertImageUrlToLower(author.ImageUrl)}.jpg")" class="img-fluid" /></td>
+                                    <td>@author.FirstName @author.LastName</td>
+                                    @if (author.ComicBookAuthors != null)
+                                    {
+                                        @foreach (var authorComic in author.ComicBookAuthors)
+                                        {
+                                            <td>@authorComic.ComicBook.SeriesTitle</td>
+                                        }
+                                    }
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

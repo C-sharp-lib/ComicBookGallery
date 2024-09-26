@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 
 namespace ComicBookGallery.Models
 {
-    public class ComicBookGalleryContext : DbContext
+    public class ComicBookGalleryContext : IdentityDbContext<IdentityUser>
     {
         public ComicBookGalleryContext(DbContextOptions<ComicBookGalleryContext> options) : base(options)
         {
@@ -17,8 +19,17 @@ namespace ComicBookGallery.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ComicBookAuthors>()
             .HasKey(ca => new { ca.ComicBookId, ca.AuthorId });
+            modelBuilder.Entity<ComicBookPublishers>()
+                .HasKey(cb => new { cb.ComicBookId, cb.PublisherId });
+            modelBuilder.Entity<ComicBook>()
+                .HasKey(cb => new { cb.ComicBookId });
+            modelBuilder.Entity<Publisher>()
+                .HasKey(cb => new { cb.PublisherId });
+            modelBuilder.Entity<Author>()
+                .HasKey(cb => new { cb.AuthorId });
 
             modelBuilder.Entity<ComicBookAuthors>()
                 .HasOne(ca => ca.ComicBook)

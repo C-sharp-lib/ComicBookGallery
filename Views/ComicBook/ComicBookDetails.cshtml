@@ -1,39 +1,47 @@
 ﻿@model ComicBookGallery.Models.ComicBook
 @{
     Layout = "_Layout";
-    ViewBag.Title = "Comic Book Details";
+    ViewBag.Title = Model.SeriesTitle + " Details";
 }
 
-<h1 class="text-center">@ViewBag.Title</h1>
 
 <div class="row">
-    <div class="col-12 col-md-8">
-        <h3>@Model.SeriesTitle  <small><strong>IssueNo: </strong></small> @Model.IssueNo</h3>
-        <hr>
-        <img src="@Url.Content($"~/img/{Model.ConvertImageUrlToLower(Model.ImageUrl)}.jpg")" alt="@Model.SeriesTitle" class="img-fluid" />
-        <h3 class="text-center"><strong>Description</strong></h3>
-        <p class="text-center">@Model.Description</p>
-    </div>
     <div class="col-12 col-md-4">
-        <h3 class="text-center mt-3"><strong>Author(s)</strong></h3>
-        <ul class="list-group list-group-flush">
+        <div id="app">
+            <card data-image="@Url.Content($"~/img/{Model.ConvertImageUrlToLower(Model.ImageUrl)}.jpg")">
+                <h3 slot="header">@Model.SeriesTitle</h3>
+                <p slot="content"><strong>Issue No: </strong>@Model.IssueNo</p>
+            </card>
+        </div>
+
+    </div>
+    <div class="col-12 col-md-5">
+        <h3 class="text-center"><strong>About @Model.SeriesTitle</strong></h3>
+        <p class="text-center p-3">@Model.Description</p>
+    </div>
+    <div class="col-12 col-md-3">
+
+        <h3 class="text-center"><strong>Author(s)</strong></h3>
+        <ul class="list-group">
             @if (Model.ComicBookAuthors != null)
             {
                 @foreach (var comicBook in Model.ComicBookAuthors)
-                {
-                    <li class="list-group-item text-center">@comicBook.Author.FirstName @comicBook.Author.LastName</li>
+                {  
+                    <a asp-action="AuthorDetails" asp-controller="ComicBook" asp-route-id="@comicBook.Author.AuthorId" class="no-style list-group-item list-group-item-action list-group-item-primary active">
+                        @comicBook.Author.FirstName @comicBook.Author.LastName
+                    </a>
                 }
             }
         </ul>
 
         <hr>
-        <h3 class="text-center mt-5"><strong>Publisher(s)</strong></h3>
-        <ul class="list-group list-group-flush">
+        <h3 class="text-center"><strong>Publisher(s)</strong></h3>
+        <ul class="list-group">
             @if (Model.ComicBookPublishers != null)
             {
                 @foreach (var comicBook in Model.ComicBookPublishers)
                 {
-                    <li class="list-group-item text-center">@comicBook.Publisher.Name</li>
+                    <a asp-action="PublisherDetails" asp-controller="ComicBook" asp-route-id="@comicBook.Publisher.PublisherId" class="no-style list-group-item list-group-item-action list-group-item-primary active">@comicBook.Publisher.Name</a>
                 }
             }
         </ul>
